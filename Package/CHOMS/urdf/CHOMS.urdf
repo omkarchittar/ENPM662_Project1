@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="CHOMS">
+  
+  <link name="base_link" />
+
+  <joint name="base_link_to_chassis" type="fixed">
+    <parent link="base_link"/>
+    <child link="chassis"/>
+  </joint>
+  
+  <link
+    name="chassis">
+    <inertial>
+      <origin
+        xyz="-0.00872584258156217 -8.73677904689174E-06 0.348841992462039"
+        rpy="0 0 0" />
+      <mass
+        value="17.0500724051443" />
+      <inertia
+        ixx="1.05544103712001"
+        ixy="-4.83008903298141E-05"
+        ixz="0.00338970998222842"
+        iyy="2.65078879681175"
+        iyz="3.77265950026107E-05"
+        izz="2.39161412207434" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CHOMS/meshes/chassis.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.901960784313726 0.92156862745098 0.92156862745098 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CHOMS/meshes/chassis.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="rightsteering">
+    <inertial>
+      <origin
+        xyz="-0.000227047232786548 0.0457064740508882 0.0380993234789555"
+        rpy="0 0 0" />
+      <mass
+        value="0.174755029943112" />
+      <inertia
+        ixx="0.000424029590737457"
+        ixy="-8.25683025288843E-20"
+        ixz="1.4633713357991E-06"
+        iyy="0.000292188084095193"
+        iyz="1.48564758924638E-19"
+        izz="0.000178479459217897" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CHOMS/meshes/rightsteering.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CHOMS/meshes/rightsteering.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rightsteeringjoint"
+    type="revolute">
+    <origin
+      xyz="0.25377 -0.254 0.1039"
+      rpy="1.5708 0 3.1416" />
+    <parent
+      link="chassis" />
+    <child
+      link="rightsteering" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.5"
+      upper="0.5"
+      effort="30"
+      velocity="100" />
+  </joint>
+  <link
+    name="frontrightwheel">
+    <inertial>
+      <origin
+        xyz="-0.000227047232786437 0 0.0380993234789554"
+        rpy="0 0 0" />
+      <mass
+        value="2.4057031505395" />
+      <inertia
+        ixx="0.00738572832417625"
+        ixy="1.46087584382073E-20"
+        ixz="-3.03950167993716E-05"
+        iyy="0.00738554718960942"
+        iyz="-1.36650836825002E-18"
+        izz="0.0124859378130737" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CHOMS/meshes/frontrightwheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.294117647058824 0.294117647058824 0.294117647058824 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CHOMS/meshes/frontrightwheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="frontrightwheeljoint"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="rightsteering" />
+    <child
+      link="frontrightwheel" />
+    <axis
+      xyz="0.00595924495502477 0 -0.999982243542137" />
+  </joint>
+  <link
+    name="leftsteering">
+    <inertial>
+      <origin
+        xyz="0.00182682919407662 0.0457064740508881 -0.0380561781462051"
+        rpy="0 0 0" />
+      <mass
+        value="0.174755029943111" />
+      <inertia
+        ixx="0.000423473742577242"
+        ixy="-1.10016906262855E-19"
+        ixz="1.17609981436198E-05"
+        iyy="0.000292188084095192"
+        iyz="-9.94671909825137E-20"
+        izz="0.000179035307378108" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CHOMS/meshes/leftsteering.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CHOMS/meshes/leftsteering.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leftsteeringjoint"
+    type="revolute">
+    <origin
+      xyz="0.25583 0.25396 0.1039"
+      rpy="1.5708 0 3.1416" />
+    <parent
+      link="chassis" />
+    <child
+      link="leftsteering" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.5"
+      upper="0.5"
+      effort="30"
+      velocity="100" />
+  </joint>
+  <link
+    name="frontleftwheel">
+    <inertial>
+      <origin
+        xyz="0.00182682919407628 5.55111512312578E-17 -0.0380561781462048"
+        rpy="0 0 0" />
+      <mass
+        value="2.4057031505395" />
+      <inertia
+        ixx="0.00739727359211625"
+        ixy="1.02094696996403E-19"
+        ixz="-0.0002442823140016"
+        iyy="0.00738554718960941"
+        iyz="1.03781340957124E-18"
+        izz="0.0124743925451336" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CHOMS/meshes/frontleftwheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.294117647058824 0.294117647058824 0.294117647058824 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CHOMS/meshes/frontleftwheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="frontleftwheeljoint"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="leftsteering" />
+    <child
+      link="frontleftwheel" />
+    <axis
+      xyz="0.0562912463434586 0 -0.998414390714146" />
+  </joint>
+  <link
+    name="rearrightwheel">
+    <inertial>
+      <origin
+        xyz="0 5.55111512312578E-17 0.0381"
+        rpy="0 0 0" />
+      <mass
+        value="2.4057031505395" />
+      <inertia
+        ixx="0.00738554718960941"
+        ixy="-1.37830127619506E-19"
+        ixz="-3.22719552903884E-21"
+        iyy="0.00738554718960941"
+        iyz="2.15146368602591E-21"
+        izz="0.0124861189476405" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CHOMS/meshes/rearrightwheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.294117647058824 0.294117647058824 0.294117647058824 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CHOMS/meshes/rearrightwheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rearrightwheeljoint"
+    type="continuous">
+    <origin
+      xyz="-0.254 -0.254 0.1039"
+      rpy="1.5708 0 3.1416" />
+    <parent
+      link="chassis" />
+    <child
+      link="rearrightwheel" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="rearleftwheel">
+    <inertial>
+      <origin
+        xyz="0 -5.55111512312578E-17 -0.0381"
+        rpy="0 0 0" />
+      <mass
+        value="2.4057031505395" />
+      <inertia
+        ixx="0.00738554718960941"
+        ixy="-7.19140170467313E-19"
+        ixz="1.3436047786286E-19"
+        iyy="0.00738554718960941"
+        iyz="7.44614971272297E-22"
+        izz="0.0124861189476405" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CHOMS/meshes/rearleftwheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.294117647058824 0.294117647058824 0.294117647058824 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CHOMS/meshes/rearleftwheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rearleftwheeljoint"
+    type="continuous">
+    <origin
+      xyz="-0.254 0.254 0.1039"
+      rpy="1.5707963267949 0 3.14159265358979" />
+    <parent
+      link="chassis" />
+    <child
+      link="rearleftwheel" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+
+  <transmission name="leftsteertrans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="leftsteeringjoint">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="leftsteermotor">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
+  <transmission name="rightsteertrans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="rightsteeringjoint">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="rightsteermotor">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
+  <transmission name="rearrighttrans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="rearrightwheeljoint">
+      <hardwareInterface>VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="rearrightmotor">
+      <hardwareInterface>VelocityJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
+  <transmission name="rearlefttrans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="rearleftwheeljoint">
+      <hardwareInterface>VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="rearleftmotor">
+      <hardwareInterface>VelocityJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+</robot>

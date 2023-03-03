@@ -1,0 +1,35 @@
+# Robot name goes here
+CHOMS: # change the name
+  # default controller
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
+
+  # Controller 1
+  right_steering_controller: # change the name
+    type: effort_controllers/JointPositionController 
+    joint: rightsteeringjoint  
+    pid : {p: 100.0 , i: 0.0 , d: 0.0} 
+    
+  # Controller 2
+  left_steering_controller: # change the name
+    type: effort_controllers/JointPositionController 
+    joint: leftsteeringjoint  
+    pid : {p: 100.0 , i: 0.0 , d: 0.0}
+    
+  # Controller 3
+  rear_left_controller: # change the name
+    type: velocity_controllers/JointVelocityController 
+    joint: rearleftwheeljoint  
+    pid : {p: 100.0 , i: 0.0 , d: 0.0} 
+
+  # Controller 4
+  rear_right_controller: # change the name
+    type: velocity_controllers/JointVelocityController 
+    joint: rearrightwheeljoint  
+    pid : {p: 100.0 , i: 0.0 , d: 0.0}  
+
+
+
+
+ 
